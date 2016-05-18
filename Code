@@ -1,0 +1,48 @@
+import java.util.*;
+public class FunnyString {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		String s;
+		String s1;
+		//char [] reverse=new char[t];
+		//List<Character> reverse = new ArrayList<Character>();
+		for(int y=0;y<t;y++)
+		{
+			s=sc.next();
+			//char [] reverse=new char[s.length()];
+			//reverse=s.toCharArray();
+			//for(int i=0;i<s.length();i++){}
+			char[] try1= s.toCharArray();
+			char[] try2= new char[s.length()];
+			int j=0;
+            for (int i=try1.length-1;i>=0;i--){
+            try2[j]=try1[i];
+            		j++;
+            		}
+            //now compare ascii value
+            boolean flag=false;
+            for(int i=1;i<s.length();i++)
+            {
+            	if(Math.abs((int)try1[i]-(int)try1[i-1])!=Math.abs((int)try2[i]-(int)try2[i-1]))
+            		{
+            		flag=true;
+            		break;
+            		}
+            }
+            if(flag)
+            	System.out.println("Not Funny");
+            else
+            	System.out.println("Funny");
+            }
+            
+		}
+
+	}
+
+
